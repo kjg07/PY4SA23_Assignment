@@ -5,7 +5,7 @@
    "id": "8d05107a-89b5-4d14-b7d2-53e319d42fd7",
    "metadata": {},
    "source": [
-    "# Lab Assignment No 2 - Katie Gilchrist"
+    "# **Lab Assignment No 2 - Katie Gilchrist**"
    ]
   },
   {
@@ -25,9 +25,64 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "81296fec-63a8-44aa-960f-9758224c3c69",
+   "metadata": {},
+   "source": [
+    "### **Task 1**"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "125f7dfd-46a6-44b7-906d-73baa2b88ee1",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "1212 is divisible by 3.\n"
+     ]
+    }
+   ],
+   "source": [
+    "x = 12\n",
+    "if x / 3 :\n",
+    "    print(str(x) + \"12 is divisible by 3.\")\n",
+    "else:\n",
+    "    print(str(x) + \"12 is not divisible by 3.\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "28dc7cc4-08c5-4b53-bd98-6ea551772d0b",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "NameError",
+     "evalue": "name 'apple' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[11], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m lst1 \u001b[38;5;241m=\u001b[39m [\u001b[43mapple\u001b[49m, orange, pear, kiwi, banana]\n\u001b[1;32m      2\u001b[0m \u001b[38;5;28;01mfor\u001b[39;00m i \u001b[38;5;129;01min\u001b[39;00m lst1:\n\u001b[1;32m      3\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m i \u001b[38;5;241m==\u001b[39m strawberry:\n",
+      "\u001b[0;31mNameError\u001b[0m: name 'apple' is not defined"
+     ]
+    }
+   ],
+   "source": [
+    "lst1 = [apple, orange, pear, kiwi, banana]\n",
+    "for i in lst1:\n",
+    "    print banana\n",
+    "    "
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "f4ae79f5-949a-473b-baaf-b51b4944a560",
+   "id": "93897aa7-40e4-4ad2-b77c-200c74981758",
    "metadata": {},
    "outputs": [],
    "source": []
