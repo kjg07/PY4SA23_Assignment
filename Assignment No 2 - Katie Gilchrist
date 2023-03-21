@@ -34,58 +34,84 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 24,
    "id": "125f7dfd-46a6-44b7-906d-73baa2b88ee1",
-   "metadata": {},
+   "metadata": {
+    "tags": []
+   },
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "1212 is divisible by 3.\n"
+      "12 is divisible by 3.\n"
      ]
     }
    ],
    "source": [
     "x = 12\n",
     "if x / 3 :\n",
-    "    print(str(x) + \"12 is divisible by 3.\")\n",
+    "    print(str(x) + \" is divisible by 3.\")\n",
     "else:\n",
-    "    print(str(x) + \"12 is not divisible by 3.\")"
+    "    print(str(x) + \" is not divisible by 3.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "714b045b-30ab-4320-a71e-aab1a52857ea",
+   "metadata": {},
+   "source": [
+    "### **Task 2**"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
-   "id": "28dc7cc4-08c5-4b53-bd98-6ea551772d0b",
+   "execution_count": 69,
+   "id": "2d230a3c-8cd6-4e4c-8981-dcd871e42420",
    "metadata": {},
    "outputs": [
     {
-     "ename": "NameError",
-     "evalue": "name 'apple' is not defined",
-     "output_type": "error",
-     "traceback": [
-      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
-      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "Cell \u001b[0;32mIn[11], line 1\u001b[0m\n\u001b[0;32m----> 1\u001b[0m lst1 \u001b[38;5;241m=\u001b[39m [\u001b[43mapple\u001b[49m, orange, pear, kiwi, banana]\n\u001b[1;32m      2\u001b[0m \u001b[38;5;28;01mfor\u001b[39;00m i \u001b[38;5;129;01min\u001b[39;00m lst1:\n\u001b[1;32m      3\u001b[0m     \u001b[38;5;28;01mif\u001b[39;00m i \u001b[38;5;241m==\u001b[39m strawberry:\n",
-      "\u001b[0;31mNameError\u001b[0m: name 'apple' is not defined"
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      " strawberry is an acceptable fruit.\n",
+      " strawberry is an acceptable fruit.\n",
+      " strawberry is an acceptable fruit.\n",
+      " strawberry is an acceptable fruit.\n",
+      " strawberry is an acceptable fruit.\n"
      ]
     }
    ],
    "source": [
-    "lst1 = [apple, orange, pear, kiwi, banana]\n",
-    "for i in lst1:\n",
-    "    print banana\n",
-    "    "
+    "lst1 = ['apple', 'orange', 'pear','kiwi', 'strawberry']\n",
+    "\n",
+    "x = 'strawberry'\n",
+    "\n",
+    "for x in lst1:\n",
+    "    if x in lst1:\n",
+    "        print(\" strawberry is an acceptable fruit.\")\n",
+    "    \n",
+    "    else: \n",
+    "        print(\" strawberry is not an acceptable fruit.\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d3223d90-6401-4e88-8112-94e6e7d18c9b",
+   "metadata": {},
+   "source": [
+    "### **Task 3**"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": null,
-   "id": "93897aa7-40e4-4ad2-b77c-200c74981758",
+   "execution_count": 49,
+   "id": "0a29984a-7842-4abd-9003-6320892333fd",
    "metadata": {},
    "outputs": [],
-   "source": []
+   "source": [
+    "import math"
+   ]
   }
  ],
  "metadata": {
