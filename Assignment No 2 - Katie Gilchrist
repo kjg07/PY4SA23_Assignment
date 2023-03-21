@@ -66,7 +66,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 69,
+   "execution_count": 74,
    "id": "2d230a3c-8cd6-4e4c-8981-dcd871e42420",
    "metadata": {},
    "outputs": [
@@ -105,13 +105,79 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 49,
+   "execution_count": 75,
    "id": "0a29984a-7842-4abd-9003-6320892333fd",
    "metadata": {},
    "outputs": [],
    "source": [
     "import math"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 76,
+   "id": "8168fffc-7981-40ed-a69a-053cb2f0bb56",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Collecting haversine\n",
+      "  Downloading haversine-2.8.0-py2.py3-none-any.whl (7.7 kB)\n",
+      "Installing collected packages: haversine\n",
+      "Successfully installed haversine-2.8.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "!pip install haversine"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 77,
+   "id": "b9bcf562-cf77-4249-b437-c210ee94b37f",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import haversine as hs"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 93,
+   "id": "47a09e3f-4887-40d2-acfd-f441f79d8960",
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "TypeError",
+     "evalue": "'module' object is not callable",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
+      "Cell \u001b[0;32mIn[93], line 6\u001b[0m\n\u001b[1;32m      4\u001b[0m loc1\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m56.3202\u001b[39m,\u001b[38;5;241m3.0101\u001b[39m)\n\u001b[1;32m      5\u001b[0m loc2\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m55.9533\u001b[39m,\u001b[38;5;241m3.1883\u001b[39m)\n\u001b[0;32m----> 6\u001b[0m \u001b[43mhs\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mhaversine\u001b[49m\u001b[43m(\u001b[49m\u001b[43mloc1\u001b[49m\u001b[43m,\u001b[49m\u001b[43mloc2\u001b[49m\u001b[43m)\u001b[49m\n",
+      "\u001b[0;31mTypeError\u001b[0m: 'module' object is not callable"
+     ]
+    }
+   ],
+   "source": [
+    "def distance_from(loc1,loc2): \n",
+    "    dist=hs.haversine(loc1,loc2)\n",
+    "    \n",
+    "loc1=(56.3202,3.0101)\n",
+    "loc2=(55.9533,3.1883)\n",
+    "hs.haversine(loc1,loc2)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "28589e17-6c63-4e11-873c-e8ad565d53e2",
+   "metadata": {},
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
