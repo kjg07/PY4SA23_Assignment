@@ -5,7 +5,7 @@
    "id": "8d05107a-89b5-4d14-b7d2-53e319d42fd7",
    "metadata": {},
    "source": [
-    "# **Lab Assignment No 2 - Katie Gilchrist**"
+    "# Lab Assignment No 2 - Katie Gilchrist"
    ]
   },
   {
@@ -13,15 +13,26 @@
    "id": "81ae644c-ebb4-424c-8513-38f4d16fc24c",
    "metadata": {},
    "source": [
-    "## 200014257"
+    "### **200014257**"
    ]
   },
   {
    "cell_type": "markdown",
    "id": "4288124b-ddf6-4ed6-b31f-414c939b42da",
+   "metadata": {
+    "jp-MarkdownHeadingCollapsed": true,
+    "tags": []
+   },
+   "source": [
+    "### https://github.com/kjg07/PY4SA23_Assignment.git"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d33c21c-67fe-4112-9e81-2d5849b22c75",
    "metadata": {},
    "source": [
-    "## https://github.com/kjg07/PY4SA23_Assignment.git"
+    "## **Python Basics** ##"
    ]
   },
   {
@@ -29,7 +40,7 @@
    "id": "81296fec-63a8-44aa-960f-9758224c3c69",
    "metadata": {},
    "source": [
-    "### **Task 1**"
+    "### Task 1"
    ]
   },
   {
@@ -61,12 +72,12 @@
    "id": "714b045b-30ab-4320-a71e-aab1a52857ea",
    "metadata": {},
    "source": [
-    "### **Task 2**"
+    "### Task 2"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 74,
+   "execution_count": 98,
    "id": "2d230a3c-8cd6-4e4c-8981-dcd871e42420",
    "metadata": {},
    "outputs": [
@@ -74,11 +85,7 @@
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      " strawberry is an acceptable fruit.\n",
-      " strawberry is an acceptable fruit.\n",
-      " strawberry is an acceptable fruit.\n",
-      " strawberry is an acceptable fruit.\n",
-      " strawberry is an acceptable fruit.\n"
+      "strawberry is an acceptable fruit.\n"
      ]
     }
    ],
@@ -87,12 +94,11 @@
     "\n",
     "x = 'strawberry'\n",
     "\n",
-    "for x in lst1:\n",
-    "    if x in lst1:\n",
-    "        print(\" strawberry is an acceptable fruit.\")\n",
+    "if x in lst1:\n",
+    "        print(str(x) + \" is an acceptable fruit.\")\n",
     "    \n",
-    "    else: \n",
-    "        print(\" strawberry is not an acceptable fruit.\")"
+    "else: \n",
+    "        print(str(x) + \" is not an acceptable fruit.\")"
    ]
   },
   {
@@ -100,24 +106,21 @@
    "id": "d3223d90-6401-4e88-8112-94e6e7d18c9b",
    "metadata": {},
    "source": [
-    "### **Task 3**"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 75,
-   "id": "0a29984a-7842-4abd-9003-6320892333fd",
-   "metadata": {},
-   "outputs": [],
-   "source": [
-    "import math"
+    "### Task 3"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": 76,
    "id": "8168fffc-7981-40ed-a69a-053cb2f0bb56",
-   "metadata": {},
+   "metadata": {
+    "collapsed": true,
+    "jupyter": {
+     "outputs_hidden": true,
+     "source_hidden": true
+    },
+    "tags": []
+   },
    "outputs": [
     {
      "name": "stdout",
@@ -146,9 +149,11 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 93,
+   "execution_count": 104,
    "id": "47a09e3f-4887-40d2-acfd-f441f79d8960",
-   "metadata": {},
+   "metadata": {
+    "tags": []
+   },
    "outputs": [
     {
      "ename": "TypeError",
@@ -157,24 +162,37 @@
      "traceback": [
       "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
       "\u001b[0;31mTypeError\u001b[0m                                 Traceback (most recent call last)",
-      "Cell \u001b[0;32mIn[93], line 6\u001b[0m\n\u001b[1;32m      4\u001b[0m loc1\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m56.3202\u001b[39m,\u001b[38;5;241m3.0101\u001b[39m)\n\u001b[1;32m      5\u001b[0m loc2\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m55.9533\u001b[39m,\u001b[38;5;241m3.1883\u001b[39m)\n\u001b[0;32m----> 6\u001b[0m \u001b[43mhs\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mhaversine\u001b[49m\u001b[43m(\u001b[49m\u001b[43mloc1\u001b[49m\u001b[43m,\u001b[49m\u001b[43mloc2\u001b[49m\u001b[43m)\u001b[49m\n",
+      "Cell \u001b[0;32mIn[104], line 3\u001b[0m\n\u001b[1;32m      1\u001b[0m lst1\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m56.3202\u001b[39m,\u001b[38;5;241m3.0101\u001b[39m)\n\u001b[1;32m      2\u001b[0m lst2\u001b[38;5;241m=\u001b[39m(\u001b[38;5;241m55.9533\u001b[39m,\u001b[38;5;241m3.1883\u001b[39m)\n\u001b[0;32m----> 3\u001b[0m \u001b[43mhs\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mhaversine\u001b[49m\u001b[43m(\u001b[49m\u001b[43mlst1\u001b[49m\u001b[43m,\u001b[49m\u001b[43mlst2\u001b[49m\u001b[43m)\u001b[49m\n",
       "\u001b[0;31mTypeError\u001b[0m: 'module' object is not callable"
      ]
     }
    ],
    "source": [
-    "def distance_from(loc1,loc2): \n",
-    "    dist=hs.haversine(loc1,loc2)\n",
-    "    \n",
-    "loc1=(56.3202,3.0101)\n",
-    "loc2=(55.9533,3.1883)\n",
-    "hs.haversine(loc1,loc2)"
+    "lst1=(56.3202,3.0101)\n",
+    "lst2=(55.9533,3.1883)\n",
+    "hs.haversine(lst1,lst2)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f1b04f51-82c3-4940-b9ed-a937bf947d29",
+   "metadata": {},
+   "source": [
+    "## **Pandas and NumPy** ##"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3d0fa208-5f3f-4ec9-b986-6949df88ae30",
+   "metadata": {},
+   "source": [
+    "### Q1 - How many trees are of the Quercus or Acer genus?"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "28589e17-6c63-4e11-873c-e8ad565d53e2",
+   "id": "dd63fe7e-0a02-4b00-b8d2-005484abce1c",
    "metadata": {},
    "outputs": [],
    "source": []
