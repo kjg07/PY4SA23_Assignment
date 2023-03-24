@@ -664,9 +664,53 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "7cd9f886-cb1d-4c7c-8861-059c42f9452f",
+   "metadata": {},
+   "source": [
+    "##### There are 124 trees which are either Quercus or Acer that have a DBH of larger than 50 inches."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d4731653-42a3-4302-980c-7890f783aad9",
+   "metadata": {},
+   "source": [
+    "### Q3 - Which genus has the highest mean DBH of the following genera: Quercus, Acer, or Fraxinus?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "c31a5b0b-4064-44fb-a295-d42207365151",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "mean DBH: 20.614082399937338\n"
+     ]
+    }
+   ],
+   "source": [
+    "fraxinus_df = genus_df.query(\"Genus == 'Fraxinus'\")\n",
+    "fraxinus_mean = fraxinus_df[\"DBH\"].mean()\n",
+    "acer_df = genus.df.query(\"Genus == 'Acer'\")\n",
+    "acer_mean = acer_df[\"DBH\"].mean()\n",
+    "quercus_df = genus_df.query(\"Genus =='Quercus'\")\n",
+    "quercus_mean = quercus_df[\"DBH\"].mean()\n",
+    "if fraxinus_mean > acer_mean and fraxinus_mean > quercus_mean:\n",
+    "    print(\"Fraxinus has the highest mean DBH\")\n",
+    "elif acer_mean > fraxinus_mean and acer_mean > quercus_mean:\n",
+    "    print(\"\n",
+    "\n"
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "3779fbd1-c6c4-446f-9d35-0caad601d776",
+   "id": "00290bab-6b4d-4e2f-a4c5-14f0c642a9ed",
    "metadata": {},
    "outputs": [],
    "source": []
