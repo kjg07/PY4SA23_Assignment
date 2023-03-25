@@ -1586,22 +1586,291 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 148,
+   "id": "3b76fba3-ee15-4186-a08e-017356771af0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "EPSG:27700\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(gpd.read_file(\"/Users/katiegilchrist/Desktop/python/Primary_School_Catchments_(Moray)_(non_denominational)/Primary_School_Catchments_(Moray)_(non_denominational).shp\").crs)"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "id": "ccd71c9a-24f2-40d2-942e-6b6ee6bb6cf2",
    "metadata": {},
    "source": [
-    "##### The coordinate reference system of my data set is: "
+    "##### The coordinate reference system of my data set is: **EPSG: 27700** (British National Grid)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa8d6c1a-f435-4044-9657-26609c87fc23",
+   "metadata": {},
+   "source": [
+    "### Task 5 - How many features does the selected dataset contain?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 150,
+   "id": "b7105a0c-b78c-47e8-aaee-13b74c975d47",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "43"
+      ]
+     },
+     "execution_count": 150,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Primary_School_Catchments_df.shape[0]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f85e54bb-c878-4a29-ad65-409c2bd05777",
+   "metadata": {},
+   "source": [
+    "##### My data set contains **43 features**, therefore 43 Primary Schools."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "71570cbf-64c6-4b20-bada-244a732cc022",
+   "metadata": {},
+   "source": [
+    "### Task 6 - Defining a sub-setting criterion to create a new geopandas dataframe, filtering the selected dataset based on a categorical attribute."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 157,
+   "id": "5e17ef8a-1960-464e-8c99-424841f8fc6e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0     False\n",
+      "1     False\n",
+      "2     False\n",
+      "3     False\n",
+      "4     False\n",
+      "5     False\n",
+      "6     False\n",
+      "7     False\n",
+      "8     False\n",
+      "9     False\n",
+      "10     True\n",
+      "11    False\n",
+      "12    False\n",
+      "13    False\n",
+      "14    False\n",
+      "15    False\n",
+      "16    False\n",
+      "17    False\n",
+      "18    False\n",
+      "19    False\n",
+      "20    False\n",
+      "21    False\n",
+      "22    False\n",
+      "23    False\n",
+      "24    False\n",
+      "25    False\n",
+      "26    False\n",
+      "27    False\n",
+      "28    False\n",
+      "29    False\n",
+      "30    False\n",
+      "31    False\n",
+      "32    False\n",
+      "33    False\n",
+      "34    False\n",
+      "35    False\n",
+      "36    False\n",
+      "37    False\n",
+      "38    False\n",
+      "39    False\n",
+      "40    False\n",
+      "41    False\n",
+      "42    False\n",
+      "Name: SCHOOL, dtype: bool\n"
+     ]
+    }
+   ],
+   "source": [
+    "school_name = Primary_School_Catchments_df['SCHOOL'] == 'Dallas Primary School'\n",
+    "print(school_name)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 158,
+   "id": "c72c980e-f8f5-4789-910b-859c8ea0e61a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "    OBJECTID                 SCHOOL         ASG PAGENO  \\\n",
+      "10        11  Dallas Primary School  Forres ASG   2230   \n",
+      "\n",
+      "                                                  URL  DSDateOpen  DSDateClos  \\\n",
+      "10  http://www.moray.gov.uk/moray_schools/page_223...  2017-04-24         NaN   \n",
+      "\n",
+      "    DSDateModi  DSDatePubl  DSDateSupe  ...    X_Coord    Y_Coord  \\\n",
+      "10  2022-02-18  2017-08-14         NaN  ...  312180.46  852133.62   \n",
+      "\n",
+      "                                            Addr           Latitude  \\\n",
+      "10  Dallas Primary School Dallas Forres IV36 2RZ  57° 33' 2.6976\" N   \n",
+      "\n",
+      "           Longitude          UPRN Seed_Code    SHAPESTAre    SHAPESTLen  \\\n",
+      "10  3° 28' 8.6361\" W  000133046789   5200628  1.229720e+08  56843.929412   \n",
+      "\n",
+      "                                             geometry  \n",
+      "10  POLYGON ((319640.432 855304.208, 319628.406 85...  \n",
+      "\n",
+      "[1 rows x 22 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "school_name_criterion = Primary_School_Catchments_df[school_name]\n",
+    "print(school_name_criterion)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "34c10c82-78f8-4f9d-838d-4671489a5e65",
+   "metadata": {},
+   "source": [
+    "### Task 7 - Defining a sub-setting criterion to create a new geopandas dataframe, filtering the selected dataset based on a numerical attribute."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 162,
+   "id": "99b7ca92-e645-46e5-9dc1-8221b415333b",
+   "metadata": {
+    "tags": []
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0     False\n",
+      "1     False\n",
+      "2     False\n",
+      "3     False\n",
+      "4     False\n",
+      "5     False\n",
+      "6     False\n",
+      "7     False\n",
+      "8     False\n",
+      "9     False\n",
+      "10    False\n",
+      "11    False\n",
+      "12    False\n",
+      "13    False\n",
+      "14    False\n",
+      "15    False\n",
+      "16    False\n",
+      "17    False\n",
+      "18    False\n",
+      "19    False\n",
+      "20    False\n",
+      "21    False\n",
+      "22    False\n",
+      "23    False\n",
+      "24    False\n",
+      "25    False\n",
+      "26    False\n",
+      "27    False\n",
+      "28    False\n",
+      "29    False\n",
+      "30    False\n",
+      "31    False\n",
+      "32    False\n",
+      "33    False\n",
+      "34    False\n",
+      "35    False\n",
+      "36    False\n",
+      "37    False\n",
+      "38     True\n",
+      "39    False\n",
+      "40    False\n",
+      "41    False\n",
+      "42    False\n",
+      "Name: PAGENO, dtype: bool\n"
+     ]
+    }
+   ],
+   "source": [
+    "school_pageno= Primary_School_Catchments_df['PAGENO'] == '760'\n",
+    "print(school_pageno)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 163,
+   "id": "3f0271dd-769c-4ec6-ba15-e62339ef1877",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "    OBJECTID                   SCHOOL                ASG PAGENO  \\\n",
+      "38        39  West End Primary School  Elgin Academy ASG    760   \n",
+      "\n",
+      "                                                  URL  DSDateOpen  DSDateClos  \\\n",
+      "38  http://www.moray.gov.uk/moray_schools/page_760...  2017-04-24         NaN   \n",
+      "\n",
+      "    DSDateModi  DSDatePubl  DSDateSupe  ...    X_Coord    Y_Coord  \\\n",
+      "38  2022-02-18  2017-08-14         NaN  ...  321148.89  862422.55   \n",
+      "\n",
+      "                                                 Addr            Latitude  \\\n",
+      "38  West End Primary School Mayne Road Elgin IV30 1PA  57° 38' 41.2724\" N   \n",
+      "\n",
+      "            Longitude          UPRN Seed_Code    SHAPESTAre    SHAPESTLen  \\\n",
+      "38  3° 19' 21.3883\" W  000133000700   5201225  3.068282e+06  12156.263631   \n",
+      "\n",
+      "                                             geometry  \n",
+      "38  POLYGON ((319812.784 862854.332, 319815.968 86...  \n",
+      "\n",
+      "[1 rows x 22 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "school_pageno_criterion= Primary_School_Catchments_df[school_pageno]\n",
+    "print(school_pageno_criterion)"
    ]
   },
   {
    "cell_type": "code",
    "execution_count": null,
-   "id": "3b76fba3-ee15-4186-a08e-017356771af0",
+   "id": "ee3cfce8-9459-454b-8515-264e5c068f0f",
    "metadata": {},
    "outputs": [],
-   "source": [
-    "print(gpd.read_file(\"/Users/katiegilchrist/Desktop/python/Primary_School_Catchments_(Moray)_(non_denominational)/Primary_School_Catchments_(Moray)_(non_denominational).shp\")"
-   ]
+   "source": []
   }
  ],
  "metadata": {
