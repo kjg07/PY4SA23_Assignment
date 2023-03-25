@@ -986,6 +986,20 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 128,
+   "id": "4f5944d5-a6cc-482f-9f61-efd7b1640a74",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "%matplotlib inline\n",
+    "import geopandas as gpd"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "id": "e11f6164-3172-4647-a56d-230fb97afdae",
    "metadata": {},
@@ -994,9 +1008,164 @@
    ]
   },
   {
+   "cell_type": "markdown",
+   "id": "8e401fb6-e1cc-4398-850e-3737046bfa56",
+   "metadata": {},
+   "source": [
+    "##### I have chosen to use spatial data that shows the Primary School catchments for Moray.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 133,
+   "id": "eb572761-f057-4f63-8e50-35961d933d00",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Primary_School_Catchments_df= gpd.read_file(\"/Users/katiegilchrist/Desktop/python/Primary_School_Catchments_(Moray)_(non_denominational)/Primary_School_Catchments_(Moray)_(non_denominational).shp\")"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a5c01871-6972-491a-a3f3-1164f686aa68",
+   "metadata": {},
+   "source": [
+    "### Task 2 - Using the correct code to plot the first 5 and the last 5 sets of records in the dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 136,
+   "id": "6bcf8543-9af0-4078-82e4-c62e8f9f8c63",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "   OBJECTID                        SCHOOL           ASG PAGENO  \\\n",
+      "0         1      Inveravon Primary School  Speyside ASG    732   \n",
+      "1         2      Tomintoul Primary School  Speyside ASG    748   \n",
+      "2         3  Craigellachie Primary School  Speyside ASG    730   \n",
+      "3         4         Rothes Primary School  Speyside ASG   1470   \n",
+      "4         5      Knockando Primary School  Speyside ASG    733   \n",
+      "\n",
+      "                                                 URL  DSDateOpen  DSDateClos  \\\n",
+      "0  http://www.moray.gov.uk/moray_schools/page_732...  2017-04-24         NaN   \n",
+      "1  http://www.moray.gov.uk/moray_schools/page_748...  2017-04-24         NaN   \n",
+      "2  http://www.moray.gov.uk/moray_schools/page_730...  2017-04-24         NaN   \n",
+      "3  http://www.moray.gov.uk/moray_schools/page_147...  2017-04-24         NaN   \n",
+      "4  http://www.moray.gov.uk/moray_schools/page_733...  2017-04-24         NaN   \n",
+      "\n",
+      "   DSDateModi  DSDatePubl  DSDateSupe  ...    X_Coord    Y_Coord  \\\n",
+      "0  2022-02-18  2017-08-14         NaN  ...  318490.43  837420.01   \n",
+      "1  2022-02-18  2017-08-14         NaN  ...  316776.06  818826.92   \n",
+      "2  2022-02-18  2017-08-14         NaN  ...  329033.39  845034.31   \n",
+      "3  2022-02-18  2017-08-14         NaN  ...  328106.85  849469.76   \n",
+      "4  2022-02-18  2017-08-14         NaN  ...  318656.92  843031.12   \n",
+      "\n",
+      "                                                Addr            Latitude  \\\n",
+      "0    Inveravon Primary School Ballindalloch AB37 9BA  57° 25' 11.2934\" N   \n",
+      "1  Tomintoul Primary School Cults Drive Tomintoul...   57° 15' 9.0890\" N   \n",
+      "2  Craigellachie Primary School John Street Craig...  57° 29' 23.8400\" N   \n",
+      "3  Rothes Primary School Green Street Rothes Aber...  57° 31' 46.7112\" N   \n",
+      "4  Knockando Primary School Knockando Aberlour AB...  57° 28' 12.7983\" N   \n",
+      "\n",
+      "           Longitude          UPRN Seed_Code    SHAPESTAre     SHAPESTLen  \\\n",
+      "0  3° 21' 31.4941\" W  000133048232   5207428  4.432113e+07   38223.421817   \n",
+      "1  3° 22' 51.6027\" W  000133038563   5209234  4.131968e+08  155538.181320   \n",
+      "2   3° 11' 7.6920\" W  000133036491   5206723  2.751277e+07   31247.932838   \n",
+      "3   3° 12' 8.0346\" W  000133002339   5202620  9.771401e+07   54227.613424   \n",
+      "4  3° 21' 28.2371\" W  000133048395   5201829  1.008795e+08   50140.160316   \n",
+      "\n",
+      "                                            geometry  \n",
+      "0  POLYGON ((321430.419 841482.486, 321420.372 84...  \n",
+      "1  POLYGON ((317052.554 829043.192, 317046.691 82...  \n",
+      "2  POLYGON ((331080.424 850633.152, 331112.642 85...  \n",
+      "3  POLYGON ((328836.158 856184.602, 329024.007 85...  \n",
+      "4  POLYGON ((325252.860 842577.567, 325189.576 84...  \n",
+      "\n",
+      "[5 rows x 22 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(Primary_School_Catchments_df.head(5))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 137,
+   "id": "c4262551-b6df-47eb-9583-38c2b74f29ed",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "    OBJECTID                    SCHOOL                ASG  PAGENO  \\\n",
+      "38        39   West End Primary School  Elgin Academy ASG     760   \n",
+      "39        40   Seafield Primary School  Elgin Academy ASG     755   \n",
+      "40        41   East End Primary School  Elgin Academy ASG     752   \n",
+      "41        42   Linkwood Primary School     Elgin High ASG  106730   \n",
+      "42        43  Lhanbryde Primary School        Milne's ASG    1463   \n",
+      "\n",
+      "                                                  URL  DSDateOpen  DSDateClos  \\\n",
+      "38  http://www.moray.gov.uk/moray_schools/page_760...  2017-04-24         NaN   \n",
+      "39  http://www.moray.gov.uk/moray_schools/page_755...  2017-04-24         NaN   \n",
+      "40  http://www.moray.gov.uk/moray_schools/page_752...  2017-04-24         NaN   \n",
+      "41  http://www.moray.gov.uk/moray_schools/page_106...  2017-04-24         NaN   \n",
+      "42  http://www.moray.gov.uk/moray_schools/page_146...  2017-04-24         NaN   \n",
+      "\n",
+      "    DSDateModi  DSDatePubl  DSDateSupe  ...    X_Coord    Y_Coord  \\\n",
+      "38  2022-02-18  2017-08-14         NaN  ...  321148.89  862422.55   \n",
+      "39  2022-02-18  2017-08-14         NaN  ...  321789.29  863889.60   \n",
+      "40  2022-02-18  2017-08-14         NaN  ...  322193.03  862666.70   \n",
+      "41  2022-02-18  2017-08-14         NaN  ...  323121.88  860840.32   \n",
+      "42  2022-02-18  2017-08-14         NaN  ...  327606.66  861243.47   \n",
+      "\n",
+      "                                                 Addr            Latitude  \\\n",
+      "38  West End Primary School Mayne Road Elgin IV30 1PA  57° 38' 41.2724\" N   \n",
+      "39  Seafield Primary School Deanshaugh Terrace Elg...  57° 39' 29.1009\" N   \n",
+      "40  East End Primary School Institution Road Elgin...  57° 38' 49.8194\" N   \n",
+      "41  Linkwood Primary School Thistle Drive Elgin IV...  57° 37' 51.3507\" N   \n",
+      "42  Lhanbryde Primary School Garmouth Road Lhanbry...   57° 38' 7.0598\" N   \n",
+      "\n",
+      "            Longitude          UPRN Seed_Code    SHAPESTAre    SHAPESTLen  \\\n",
+      "38  3° 19' 21.3883\" W  000133000700   5201225  3.068282e+06  12156.263631   \n",
+      "39  3° 18' 44.4898\" W  000133039111   5201020  1.296638e+07  19012.922396   \n",
+      "40  3° 18' 18.7195\" W  000133044320   5200822  2.654592e+06   7764.081236   \n",
+      "41  3° 17' 20.6210\" W  000133072056   1003674  1.408316e+07  21782.815622   \n",
+      "42  3° 12' 50.7601\" W  000133001425   5201926  6.650655e+07  40561.661552   \n",
+      "\n",
+      "                                             geometry  \n",
+      "38  POLYGON ((319812.784 862854.332, 319815.968 86...  \n",
+      "39  POLYGON ((322658.125 866421.018, 322660.050 86...  \n",
+      "40  POLYGON ((322578.615 863539.897, 322579.272 86...  \n",
+      "41  POLYGON ((323717.063 862392.477, 323826.362 86...  \n",
+      "42  POLYGON ((324693.842 859109.392, 324704.630 85...  \n",
+      "\n",
+      "[5 rows x 22 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(Primary_School_Catchments_df.tail(5))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9dc88754-ab78-48a2-99f1-2685a0170d4e",
+   "metadata": {},
+   "source": [
+    "### Task 3 - Creating a map where I can explore my dataset. "
+   ]
+  },
+  {
    "cell_type": "code",
    "execution_count": null,
-   "id": "8ee4030c-f61f-43fb-9f26-710f24bc267c",
+   "id": "2626111d-188b-4ed7-ad74-851d76cfcd80",
    "metadata": {},
    "outputs": [],
    "source": []
